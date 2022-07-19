@@ -81,7 +81,6 @@ export default {
       floorData.isActiveFloor = true
       if (!freeElevator) {
         this.floorsLine.push(floorData.number)
-        localStorage.setItem('floorsLineState', JSON.stringify(this.floorsLine))
         return
       }
 
@@ -104,7 +103,6 @@ export default {
       if (this.floorsLine.length > 0) {
         this.callElevator(this.nextFloorInLine)
         this.floorsLine.splice(0, 1)
-        localStorage.setItem('floorsLineState', JSON.stringify(this.floorsLine))
       }
     },
     moveElevator (elevator, floor, direction) {
